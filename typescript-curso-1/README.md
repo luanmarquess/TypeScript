@@ -19,4 +19,4 @@
 - Getters vs propriedades públicas em modo de leitura;
 - ReadonlyArray;
 - Declaração de array com generics;
-- Programação defensiva;
+- Programação defensiva.
