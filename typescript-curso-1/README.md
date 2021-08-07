@@ -1,5 +1,5 @@
 # TypeScript
-### Curso 1 typeScript: Form Negociações;
+### Curso 1 TypeScript: Form Negociações;
 
 - Configuração do compilador e papel do tsconfig.json;
 - Integração com scripts do Node.js;
