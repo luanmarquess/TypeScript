@@ -6,6 +6,6 @@
 - Herança com TypeScript;
 - Classes com tipo genérico;
 - Classes abstratas;
-- O modificador protected
+- O modificador protected;
 
 
