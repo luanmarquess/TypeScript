@@ -10,4 +10,8 @@
 - Visibilidade de métodos;
 - Validar negociações em dias úteis;
 - Enums: Vantagens e cuidados;
+- Método estáticos;
+- Parâmetros opcionais
+- Remoção de comentários do código compilado;
+- Ativação do strictNullChecks;
 

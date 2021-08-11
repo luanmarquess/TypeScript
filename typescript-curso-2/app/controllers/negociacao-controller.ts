@@ -9,23 +9,25 @@ export class NegociacaoController{
     private inputQuantidade : HTMLInputElement;
     private inputValor : HTMLInputElement;
     private negociacoes = new Negociacoes;
-    private negociacoesView = new NegocicoesView('#negociacoesView');
+    private negociacoesView = new NegocicoesView('#negociacoesView', true);
     private mensagemView = new MensagemView('#mensagemView');
 
     constructor (){
-        this.inputData = document.querySelector('#data');
-        this.inputQuantidade = document.querySelector('#quantidade');
-        this.inputValor = document.querySelector('#valor');
+        this.inputData = document.querySelector('#data') as HTMLInputElement;
+        this.inputQuantidade = document.querySelector('#quantidade') as HTMLInputElement;
+        this.inputValor = document.querySelector('#valor') as HTMLInputElement;
         this.negociacoesView.update(this.negociacoes);
 
     }
 
     public adiciona() : void{
-        const negociacao = this.criaNegociacao(); 
+        const negociacao = Negociacao.criaDe(this.inputData.value, this.inputQuantidade.value, this.inputValor.value); 
+
         if(!this.ehDiaUtil(negociacao.data)){
             this,this.mensagemView.update('Apenas negociações em dias úteis são aceitas');
             return;
         };
+
         this.negociacoes.adiciona(negociacao);
         this.limparFormulario();
         this.atualizaView();
@@ -33,24 +35,6 @@ export class NegociacaoController{
 
     private ehDiaUtil(data:Date){
         return data.getDay() > DiaDaSemana.DOMINGO && data.getDay() < DiaDaSemana.SABADO;
-    }
-
-    private criaNegociacao() : Negociacao{
-        const exp = /-/g; // regex para pegar todos os ifens
-        const date = new Date(this.inputData.value.replace(exp, ','));
-        const quantidade = parseInt(this.inputQuantidade.value);
-        const valor = parseFloat(this.inputValor.value);
-
-        return new Negociacao(date, quantidade, valor);
-
-
-        /*
-        const negociacao = new Negociacao(
-            this.inputData.valueAsDate,
-            this.inputQuantidade.valueAsNumber,
-            this.inputValor.valueAsNumber
-        );
-        */
     }
 
     private limparFormulario() : void {

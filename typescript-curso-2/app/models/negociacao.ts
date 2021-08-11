@@ -18,4 +18,13 @@ export class Negociacao{
     get volume() : number{
         return this.quantidade * this.valor;
     }
+
+    public static criaDe(dataString : string, quantidadeString: string, volumeString: string) : Negociacao{
+        const exp = /-/g; // regex para pegar todos os ifens
+        const date = new Date(dataString.replace(exp, ','));
+        const quantidade = parseInt(quantidadeString);
+        const valor = parseFloat(volumeString);
+
+        return new Negociacao(date, quantidade, valor);
+    }
 }
