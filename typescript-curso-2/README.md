@@ -7,5 +7,7 @@
 - Classes com tipo genérico;
 - Classes abstratas;
 - O modificador protected;
-
+- Visibilidade de métodos;
+- Validar negociações em dias úteis;
+- Enums: Vantagens e cuidados
 
