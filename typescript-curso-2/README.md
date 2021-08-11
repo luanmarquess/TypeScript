@@ -9,5 +9,5 @@
 - O modificador protected;
 - Visibilidade de métodos;
 - Validar negociações em dias úteis;
-- Enums: Vantagens e cuidados
+- Enums: Vantagens e cuidados;
 
