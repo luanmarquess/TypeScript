@@ -13,5 +13,5 @@
 - Método estáticos;
 - Parâmetros opcionais
 - Remoção de comentários do código compilado;
-- Ativação do strictNullChecks;
+- Ativação do strictNullChecks.
 
